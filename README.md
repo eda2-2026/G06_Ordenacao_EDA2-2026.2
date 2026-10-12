@@ -11,7 +11,7 @@
 
 | Matrícula | Nome Completo | GitHub |
 | :---: | :--- | :---: |
-| 104795603 | Danilo Barros | [@auslogyc](https://github.com/auslogyc) |
+| 222008468 | Danilo Barros | [@auslogyc](https://github.com/auslogyc) |
 
 ---
 
