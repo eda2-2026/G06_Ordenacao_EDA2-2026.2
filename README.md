@@ -148,7 +148,7 @@ $$T(n) = 8 \cdot (n + 10) = 8n + 80 \implies \mathbf{O(n)} \quad \text{(Tempo Es
 
 O vídeo de apresentação do trabalho demonstrando a execução do código, a interface web, a explicação do algoritmo e dos conceitos de EDA 2 está disponível no link abaixo:
 
-- **Link do Vídeo:** *(Adicione aqui o link não listado do YouTube ou Google Drive após a gravação)*
+- **Link do Vídeo:** *https://youtu.be/1oSZTBgzWqA*
 
 ---
 
