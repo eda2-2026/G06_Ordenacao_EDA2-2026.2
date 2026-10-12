@@ -7,11 +7,11 @@
 
 ---
 
-## Alunos
+## 👥 Integrantes do Grupo
 
-| Matrícula | Aluno |
-| :---: | :--- |
-| - | Danilo Barros |
+| Matrícula | Nome Completo | GitHub |
+| :---: | :--- | :---: |
+| 104795603 | Danilo Barros | [@auslogyc](https://github.com/auslogyc) |
 
 ---
 
@@ -20,7 +20,7 @@
 O **LogiSort** é uma aplicação interativa que modela e resolve um dos problemas logísticos mais críticos do mundo real: a **triagem automatizada e o roteamento de correspondências e encomendas por CEP**, utilizando o algoritmo **Radix Sort LSD (Least Significant Digit)** com sub-rotina de baldes estáveis.
 
 ### Contexto e Aplicação no Mundo Real
-Diariamente, centros de triagem logística (como os dos **Correios**, Mercado Livre e Amazon) processam milhões de pacotes. Cada pacote no Brasil possui um **CEP (Código de Endereçamento Postal)** composto por **8 dígitos decimais** (`XXXXX-XXX`).
+Diariamente, centros de distribuição logística (como os dos **Correios**, Mercado Livre e Amazon) processam milhões de pacotes. Cada encomenda no Brasil possui um **CEP (Código de Endereçamento Postal)** composto por **8 dígitos decimais** (`XXXXX-XXX`).
 
 Em vez de recorrer a algoritmos de comparação tradicionais ($O(n \log n)$ como QuickSort ou MergeSort), sistemas logísticos automatizados de alta performance utilizam o princípio do **Radix Sort**:
 1. O CEP possui tamanho fixo ($d = 8$) e base decimal ($k = 10$).
@@ -38,18 +38,19 @@ Em vez de recorrer a algoritmos de comparação tradicionais ($O(n \log n)$ como
    - **10 Baldes de Triagem (Base $k = 10$):** Animação dos pacotes caindo nas gavetas correspondentes de 0 a 9.
    - **Recolhimento Estável (FIFO):** Demonstra visualmente a preservação de estabilidade necessária para a corretude do Radix Sort.
 2. **Controles de Simulação:**
-   - Play / Pause para execução contínua.
-   - Avanço manual passo a passo (*Step Forward*).
-   - Sliders de velocidade ($0.5\times$ a $4\times$).
-   - Variação do tamanho do lote (8, 12, 20 ou 30 pacotes).
-   - Distribuições de dados: Aleatória, Quase Ordenada, Invertida e com Duplicatas.
+   - **Iniciar Triagem / Pausar:** Execução contínua em tempo real.
+   - **Passo a Passo (Step Forward):** Permite avançar uma leitura/despacho por vez para análise didática.
+   - **Velocidade Ajustável:** De $0.5\times$ (lento, ideal para explicação) até $4\times$ (rápido).
+   - **Variação de Lotes:** Lotes de 8, 12, 20 ou 30 pacotes.
+   - **Distribuições:** Aleatória, Quase Ordenada, Invertida e com Duplicatas.
 3. **Efeitos Sonoros Sintetizados (Web Audio API):**
-   - Bipe realista de leitor de código de barras a cada leitura.
-   - Frequências harmônicas proporcionais a cada balde (inspirado nas visualizações clássicas de ordenação).
+   - Bipe realista de leitor de código de barras a cada leitura do sensor.
+   - Notas musicais proporcionais ao índice de cada balde (0 a 9), no estilo do visualizador clássico de algoritmos da ementa.
+   - Botão para ativar/desativar o som a qualquer momento.
 4. **Arena de Benchmark e Teste de Carga:**
    - Processamento de **500 a 30.000+ encomendas reais**.
    - Comparação empírica de tempo de execução ($\text{ms}$) contra algoritmos de comparação $O(n \log n)$.
-   - Validador automático de ordenação com feedback de integridade.
+   - Validador automático garantindo que 100% dos pacotes resultaram estritamente ordenados pelo CEP.
 5. **Modal Pedagógico de Fundamentos Teóricos:**
    - Dedução da complexidade assintótica, prova de estabilidade e pseudocódigo.
 
@@ -71,7 +72,7 @@ Como $d$ e $k$ são constantes independentes do tamanho da entrada $n$:
 
 $$T(n) = 8 \cdot (n + 10) = 8n + 80 \implies \mathbf{O(n)} \quad \text{(Tempo Estritamente Linear)}$$
 
-### 2. Comparativo: Radix Sort vs. Algoritmos Comparativos
+### 2. Comparativo: Radix Sort vs. Algoritmos Clássicos
 
 | Algoritmo | Melhor Caso | Caso Médio | Pior Caso | Memória Auxiliar | Estável? |
 | :--- | :---: | :---: | :---: | :---: | :---: |
@@ -80,19 +81,17 @@ $$T(n) = 8 \cdot (n + 10) = 8n + 80 \implies \mathbf{O(n)} \quad \text{(Tempo Es
 | **Merge Sort** | $O(n \log n)$ | $O(n \log n)$ | $O(n \log n)$ | $O(n)$ | Sim |
 | **Heap Sort** | $O(n \log n)$ | $O(n \log n)$ | $O(n \log n)$ | $O(1)$ | Não |
 
-> **Conclusão:** Para dados com chaves numéricas ou alfanuméricas de tamanho fixo (como CEPs, CPFs e placas de veículos), o Radix Sort quebra a barreira assintótica de $\Omega(n \log n)$ de comparações, superando algoritmos clássicos em grandes volumes.
-
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Linguagem & Runtime:** TypeScript / JavaScript (ES2022), Node.js (v18+)
-- **Biblioteca de Interface:** [React 18](https://react.dev/)
-- **Build Tool:** [Vite](https://vitejs.dev/)
-- **Estilização:** [Tailwind CSS](https://tailwindcss.com/)
-- **Iconografia:** [Lucide Icons](https://lucide.dev/)
-- **Áudio:** Web Audio API nativa
-- **Efeitos:** Canvas Confetti
+- **Linguagem & Tipagem:** TypeScript 5.5 / JavaScript (ES2022)
+- **Framework Front-End:** [React 18](https://react.dev/)
+- **Build Tooling & Servidor:** [Vite 5](https://vitejs.dev/)
+- **Estilização & Design System:** [Tailwind CSS 3](https://tailwindcss.com/)
+- **Ícones:** [Lucide Icons](https://lucide.dev/)
+- **Áudio:** Web Audio API nativa (sem arquivos pesados de terceiros)
+- **Efeitos Visuais:** Canvas Confetti
 
 ---
 
@@ -100,7 +99,7 @@ $$T(n) = 8 \cdot (n + 10) = 8n + 80 \implies \mathbf{O(n)} \quad \text{(Tempo Es
 
 ### Pré-requisitos
 - [Node.js](https://nodejs.org/) versão 18 ou superior instalada.
-- Gerenciador de pacotes `npm` (incluso com o Node).
+- Gerenciador de pacotes `npm` (já incluso no Node.js).
 
 ### Passo a Passo
 
@@ -119,12 +118,29 @@ $$T(n) = 8 \cdot (n + 10) = 8n + 80 \implies \mathbf{O(n)} \quad \text{(Tempo Es
    ```bash
    npm run dev
    ```
-   Acesse a URL exibida no terminal (normalmente `http://localhost:5173/`).
+   Abra no seu navegador o endereço indicado (normalmente `http://localhost:5173/`).
 
-4. **Gerar Build de Produção:**
+4. **Gerar Build de Produção (Opcional):**
    ```bash
    npm run build
+   npm run preview
    ```
+
+---
+
+## 🎮 Guia de Uso da Interface
+
+1. **Controles Principais:**
+   - **Botão "Iniciar Triagem" (Verde):** Dá play na simulação automática. A esteira começa a se mover e os pacotes são distribuídos para os baldes.
+   - **Botão "Passo a Passo" (Azul):** Permite ver cada ação isolada (leitura do sensor ótico e queda no balde).
+   - **Seletor de Velocidade (0.5x, 1x, 2x, 4x):** Ajusta o ritmo da animação. Para apresentações, `1x` ou `0.5x` são ideais.
+   - **Botão "Novo Lote":** Sorteia uma nova lista de encomendas brasileiras com CEPs válidos.
+2. **Painel de Métricas:**
+   - Exibe a passada atual de 1 a 8, qual dígito do CEP está sendo avaliado (ex: unidade, centena, região postal geral), total de despachos e recolhimentos estáveis.
+3. **Botão "Arena de Carga":**
+   - Abre o modal de benchmark empírico. Escolha entre 500, 2.500, 10.000 ou 30.000 pacotes e clique em "Executar Benchmark" para ver a medição real em milissegundos contra algoritmos de comparação.
+4. **Botão "Teoria do Algoritmo":**
+   - Abre um resumo didático com a história da IBM, demonstração da complexidade e pseudocódigo.
 
 ---
 
@@ -132,13 +148,13 @@ $$T(n) = 8 \cdot (n + 10) = 8n + 80 \implies \mathbf{O(n)} \quad \text{(Tempo Es
 
 O vídeo de apresentação do trabalho demonstrando a execução do código, a interface web, a explicação do algoritmo e dos conceitos de EDA 2 está disponível no link abaixo:
 
-- **Link do Vídeo:** *(Adicione aqui o link não listado do YouTube ou Google Drive)*
+- **Link do Vídeo:** *(Adicione aqui o link não listado do YouTube ou Google Drive após a gravação)*
 
 ---
 
 ## 📜 Histórico de Commits Progressivos
 
-O repositório foi construído de maneira incremental e modular, seguindo o padrão *Conventional Commits*:
+O projeto foi construído incrementalmente através de commits semânticos no Git:
 
 1. `chore: inicializar estrutura do projeto com Vite, React, TypeScript e Tailwind CSS`
 2. `feat(algorithms): implementar algoritmo Radix Sort LSD com gerador de passos para triagem`
@@ -147,3 +163,4 @@ O repositório foi construído de maneira incremental e modular, seguindo o padr
 5. `feat(ui): adicionar controles de execucao, velocidade, modo passo-a-passo e sonoplastia`
 6. `feat(app): adicionar painel de metricas, estatisticas em tempo real e aba de teoria pedagogica`
 7. `docs: adicionar documentacao completa do projeto no padrao EDA 2`
+8. `docs: detalhar guia de uso da aplicacao e roteiro de apresentacao no README`
